@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "airgap-bridge"
+version = "0.2.0"
+description = "Ultrasonic BFSK text transfer and chat-style app"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "AirGap Bridge Prototype"}]
+dependencies = [
+  "numpy",
+  "scipy",
+  "sounddevice",
+  "matplotlib",
+  "cryptography",
+]
+
+[project.scripts]
+airgap-sender = "sender:main"
+airgap-receiver = "receiver:main"
+airgap-chat = "chat_app:main"
+
+[tool.setuptools]
+py-modules = ["sender", "receiver", "utils", "chat_app"]
